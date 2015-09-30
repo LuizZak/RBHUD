@@ -6,7 +6,7 @@
 
 HUD written in **Swift** - Ready to use, no muss, no fuss...
 
-![RBHUD written in Swift](https://github.com/robertBojor/RBHUD/blob/master/RBHUD/hud_gif.gif)
+![RBHUD written in Swift](https://github.com/robertBojor/RBHUD/blob/master/hud_gif.gif)
 
 ## How To
 ### Install it using CocoaPods
