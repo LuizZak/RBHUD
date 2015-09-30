@@ -1,8 +1,9 @@
 # RBHUD
 
-[![Version](https://img.shields.io/cocoapods/v/RBHUD.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
-[![License](https://img.shields.io/cocoapods/l/RBHUD.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
-[![Platform](http://img.shields.io/badge/iOS-8.3%2B-blue.svg)]() [![Language](http://img.shields.io/badge/Swift-2.0-orange.svg)]() 
+[![Version](https://img.shields.io/badge/version-0.0.1-green.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
+[![Platform](http://img.shields.io/badge/iOS-8.3%2B-blue.svg?style=flat)]()
+[![Language](http://img.shields.io/badge/Swift-2.0-orange.svg?style=flat)]() 
 
 HUD written in **Swift** - Ready to use, no muss, no fuss...
 
