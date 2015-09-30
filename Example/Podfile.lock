@@ -1,5 +1,5 @@
 PODS:
-  - RBHUD (0.1.0)
+  - RBHUD (0.0.1)
 
 DEPENDENCIES:
   - RBHUD (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  RBHUD: 7be2ed016762f939d327b19ca51a25a252c999be
+  RBHUD: 4790e0c6ac8ae92b216f8ee2c403b8f38c01866f
 
 COCOAPODS: 0.38.2

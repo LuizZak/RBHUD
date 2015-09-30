@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C394CA0904CD5303003BEAF8"
+               BlueprintIdentifier = "12BF4609E8CCDA685F21A6AC"
                BuildableName = "RBHUD.framework"
                BlueprintName = "RBHUD"
                ReferencedContainer = "container:Pods.xcodeproj">

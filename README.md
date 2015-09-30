@@ -1,6 +1,6 @@
 # RBHUD
 
-[![Version](https://img.shields.io/badge/version-0.0.1-green.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
+[![Version](https://img.shields.io/badge/version-0.0.2-green.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
 [![Platform](http://img.shields.io/badge/iOS-8.3%2B-blue.svg?style=flat)]()
 [![Language](http://img.shields.io/badge/Swift-2.0-orange.svg?style=flat)]() 
@@ -41,6 +41,13 @@ self.hud.progressViewPadding = 10.0   // The top and bottom padding between the 
 self.hud.progressViewStrokeColor = UIColor.whiteColor()   // The color of the progress view stroke line
 self.hud.progressViewFillColor = UIColor.clearColor()   // The fill color of the progress view
 
+self.hud.successViewLineWidth = 1.0     // The line width for the success mark
+self.hud.successViewStrokeColor = UIColor.greenColor()      // The line color for the success mark
+
+self.hud.errorViewLineWidth = 1.0       // The line width for the error mark
+self.hud.errorViewStrokeColor = UIColor.redColor()      // The line color for the error mark
+
+
 self.hud.labelAnimationDistance = 50.0    // The distance the text labels have to travel when appearing
 self.hud.labelFontName = "HelveticaNeue-Light"    // The font name for the text labels
 self.hud.labelTitleFontSize = 20.0    // The font size for the title label
@@ -62,6 +69,28 @@ The `showLoader` method has 4 parameters, 2 of which are optional:
 - `withProgress:Bool` If you want the HUD to present an undeterminate progress indicator, set this to `true`, otherwise set this to `false`
 
 If at any step in your code, you need to update the HUD's look, like for example change the title text and add a progress indicator, you can do so by calling the `showLoader` method again using the new parameters, and the HUD will update itself with the new data while still being presented.
+
+- Call the show with a success mark method
+```
+self.hud.showWithSuccess(self.view, withTitle: "Success", withSubTitle: "The task ended up successfully!")
+```
+The `showWithSuccess` method has 3 parameters, 2 of which are optional:
+
+- `inView:UIView` is the view in which you want the HUD to be shown in, usually `self.view`
+- `withTitle:String?` is the text string that will be shown as a title when the loader is presented. When sending this as `nil`, the HUD will not present a title text
+- `withSubTitle:String?` is the text string that will be shown as a subtitle when the loader is presented. When sending this as `nil`, the HUD will not present a subtitle text
+
+- Call the show with an error mark method
+```
+self.hud.showWithError(self.view, withTitle: "Oops", withSubTitle: "En error occured!")
+```
+The `showWithError` method has 3 parameters, 2 of which are optional:
+
+- `inView:UIView` is the view in which you want the HUD to be shown in, usually `self.view`
+- `withTitle:String?` is the text string that will be shown as a title when the loader is presented. When sending this as `nil`, the HUD will not present a title text
+- `withSubTitle:String?` is the text string that will be shown as a subtitle when the loader is presented. When sending this as `nil`, the HUD will not present a subtitle text
+
+Both `showWithError` and `showWithSuccess` methods are going to close the HUD in a few seconds, so there's no need to call the hide method.
 
 - Call the hide method when you're done with your the long action
 ```
@@ -112,8 +141,6 @@ The Xcode project attached to the repo also contains exmaples of calling and hid
 ## ToDo
 
 - Add an option for the overlay to partially cover the screen, rounded corners included
-- Add a `showWithSuccess` method that will display a checkmark
-- Add a `showWithError` method that will display an error message and an error mark
 
 ## Author
 

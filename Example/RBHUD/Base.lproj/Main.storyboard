@@ -32,6 +32,26 @@
                                     <action selector="startLoader:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ugv-9m-v3h"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIC-Pz-KD6">
+                                <rect key="frame" x="144" y="648" width="126" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Error HUD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showErrorHUD:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Yzl-RK-Ha9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFR-zR-y7g">
+                                <rect key="frame" x="144" y="610" width="126" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Success HUD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showSuccessHUD:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7rc-86-OY8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

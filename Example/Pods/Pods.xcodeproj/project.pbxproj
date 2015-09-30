@@ -22,14 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1E9E270A0A88BC248C37DFE83877E65A /* PBXContainerItemProxy */ = {
+		5498D18D5A6FF28E21E3502704EAF9A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B5971233F5BF561280461F9F1488F4B1;
 			remoteInfo = RBHUD;
 		};
-		DD12DCDA1EC0CC812F6234700F23C2E6 /* PBXContainerItemProxy */ = {
+		FCBFA635F660A216A6E2E6D497A5B9E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -54,7 +54,7 @@
 		6E87AE81BEF9D24C5AC765E8CC14EC84 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		751AB39AA83FA56E6E2CE36D0BC60682 /* Pods-RBHUD_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RBHUD_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		761CA854C26F3C79D05ECEC1F1CEB62E /* RBHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RBHUD-dummy.m"; sourceTree = "<group>"; };
-		7734FCA48D80F037D19BC6668F563E06 /* RBHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "RBHUD-Private.xcconfig"; sourceTree = "<group>"; };
+		7802A6B179C35B13B35400B796479616 /* RBHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "RBHUD-Private.xcconfig"; sourceTree = "<group>"; };
 		7CE85C2636130305B06EAD32E6F0082D /* Pods-RBHUD_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RBHUD_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7CFEEC251242C2AACBE9E3395E0F9B9E /* Pods_RBHUD_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RBHUD_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF93F3C6163487E99C19662539AE56C /* RBHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RBHUD-umbrella.h"; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 				A1D658FBE14B99C74F6F67C20B82071E /* Info.plist */,
 				6C50AD0C7EEAA83F3BF7A84010BDBC06 /* RBHUD.modulemap */,
 				D9441AA3EF8CAB6283EA15ECE80F6316 /* RBHUD.xcconfig */,
-				7734FCA48D80F037D19BC6668F563E06 /* RBHUD-Private.xcconfig */,
+				7802A6B179C35B13B35400B796479616 /* RBHUD-Private.xcconfig */,
 				761CA854C26F3C79D05ECEC1F1CEB62E /* RBHUD-dummy.m */,
 				6E1B0C55D5C6495410C089777C35BBFA /* RBHUD-prefix.pch */,
 				8CF93F3C6163487E99C19662539AE56C /* RBHUD-umbrella.h */,
@@ -280,7 +280,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				071374C29B87B4B67A795E6ACD6A7DE8 /* PBXTargetDependency */,
+				D00440C3E7A3401F4D378DC85CC41E25 /* PBXTargetDependency */,
 			);
 			name = "Pods-RBHUD_Tests";
 			productName = "Pods-RBHUD_Tests";
@@ -298,7 +298,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2B03C8D7831C1F4CF6D94BFF5F0B317C /* PBXTargetDependency */,
+				A5D0B67F87CDCC1812E196CDBAF398BD /* PBXTargetDependency */,
 			);
 			name = "Pods-RBHUD_Example";
 			productName = "Pods-RBHUD_Example";
@@ -379,17 +379,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		071374C29B87B4B67A795E6ACD6A7DE8 /* PBXTargetDependency */ = {
+		A5D0B67F87CDCC1812E196CDBAF398BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RBHUD;
 			target = B5971233F5BF561280461F9F1488F4B1 /* RBHUD */;
-			targetProxy = 1E9E270A0A88BC248C37DFE83877E65A /* PBXContainerItemProxy */;
+			targetProxy = FCBFA635F660A216A6E2E6D497A5B9E8 /* PBXContainerItemProxy */;
 		};
-		2B03C8D7831C1F4CF6D94BFF5F0B317C /* PBXTargetDependency */ = {
+		D00440C3E7A3401F4D378DC85CC41E25 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RBHUD;
 			target = B5971233F5BF561280461F9F1488F4B1 /* RBHUD */;
-			targetProxy = DD12DCDA1EC0CC812F6234700F23C2E6 /* PBXContainerItemProxy */;
+			targetProxy = 5498D18D5A6FF28E21E3502704EAF9A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -556,33 +556,6 @@
 			};
 			name = Release;
 		};
-		A3A75C9B4E96D71118033BA1EB378A12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7734FCA48D80F037D19BC6668F563E06 /* RBHUD-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RBHUD/RBHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RBHUD/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RBHUD/RBHUD.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = RBHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		B347D42AD93F76C2F6E2A77411E06AB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 329A1B2E5BA56B1542E3D73BCBBCE497 /* Pods-RBHUD_Example.release.xcconfig */;
@@ -612,14 +585,41 @@
 			};
 			name = Release;
 		};
-		DC0A8F08931A4CA41B478CCFA4B624B8 /* Debug */ = {
+		BDF0B20C67784D9F5F7A22B8D851ABB3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7734FCA48D80F037D19BC6668F563E06 /* RBHUD-Private.xcconfig */;
+			baseConfigurationReference = 7802A6B179C35B13B35400B796479616 /* RBHUD-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0;
+				CURRENT_PROJECT_VERSION = 0.0.1;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_COMPATIBILITY_VERSION = 0.0.1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RBHUD/RBHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RBHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RBHUD/RBHUD.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RBHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C76968E4BB800F763165C05CA1E63C1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7802A6B179C35B13B35400B796479616 /* RBHUD-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.0.1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.0.1;
 				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -673,8 +673,8 @@
 		4091375D14138CDB7E40E57C8DAA2759 /* Build configuration list for PBXNativeTarget "RBHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC0A8F08931A4CA41B478CCFA4B624B8 /* Debug */,
-				A3A75C9B4E96D71118033BA1EB378A12 /* Release */,
+				C76968E4BB800F763165C05CA1E63C1C /* Debug */,
+				BDF0B20C67784D9F5F7A22B8D851ABB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

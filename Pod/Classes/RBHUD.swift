@@ -16,7 +16,8 @@ public class RBHUD: NSObject {
     private var overlayView:UIView = UIView()
     private var parentView:UIView = UIView()
     private var progressView:UIImageView!
-    private var progressImage = UIImage(named: "loader")
+    private var errorView:UIImageView!
+    private var successView:UIImageView!
     private var titleLabel:UILabel!
     private var subtitleLabel:UILabel!
     private var subviewArray:Array<UIView>!
@@ -25,7 +26,9 @@ public class RBHUD: NSObject {
     private var isLoaderShown = false
     private var wasTitleLabelInitialised = false
     private var wasSubtitleLabelInitialised = false
-    private var wasProgressViewInitialised = false;
+    private var wasProgressViewInitialised = false
+    private var wasErrorViewInitialised = false
+    private var wasSuccessViewInitialised = false
     
     private var titleLabelCurrentRect:CGRect!
     private var titleLabelTargetRect:CGRect!
@@ -33,6 +36,10 @@ public class RBHUD: NSObject {
     private var subtitleLabelTargetRect:CGRect!
     private var progressViewCurrentRect:CGRect!
     private var progressViewTargetRect:CGRect!
+    private var errorViewCurrentRect:CGRect!
+    private var errorViewTargetRect:CGRect!
+    private var successViewCurrentRect:CGRect!
+    private var successViewTargetRect:CGRect!
     
     private let progressAnimationRepeatCount = 500.0
     private let progressAnimationDuration = 0.8
@@ -46,12 +53,18 @@ public class RBHUD: NSObject {
     public var progressViewPadding:CGFloat = 10.0
     public var progressViewStrokeColor:UIColor = UIColor.whiteColor()
     public var progressViewFillColor:UIColor = UIColor.clearColor()
+    public var successViewStrokeColor:UIColor = UIColor.whiteColor()
+    public var successViewLineWidth:CGFloat = 1.0
+    public var errorViewStrokeColor:UIColor = UIColor.redColor()
+    public var errorViewLineWidth:CGFloat = 1.0
     public var labelAnimationDistance:CGFloat = 50.0
     public var labelFontName:String = "HelveticaNeue-Light"
     public var labelTitleFontSize:CGFloat = 20.0
     public var labelTitleTextColor:UIColor = UIColor.whiteColor()
     public var labelSubtitleFontSize:CGFloat = 13.0
     public var labelSubtitleTextColor:UIColor = UIColor.whiteColor()
+    public var errorViewRemovalInterval:NSTimeInterval = 5
+    public var successViewRemovalInterval:NSTimeInterval = 5
     
     public override init()
     {
@@ -59,6 +72,12 @@ public class RBHUD: NSObject {
         
         self.progressView = UIImageView(frame: CGRectMake(0, 0, self.progressViewSize, self.progressViewSize))
         self.progressView.alpha = 0
+        
+        self.errorView = UIImageView(frame: CGRectMake(0, 0, self.progressViewSize, self.progressViewSize))
+        self.errorView.alpha = 0
+        
+        self.successView = UIImageView(frame: CGRectMake(0, 0, self.progressViewSize, self.progressViewSize))
+        self.successView.alpha = 0
         
         self.titleLabel = UILabel()
         self.titleLabel.numberOfLines = 0
@@ -102,6 +121,52 @@ public class RBHUD: NSObject {
         self.bringIntoView()
     }
     
+    public func showWithSuccess(inView:UIView, withTitle:String?, withSubTitle:String?)
+    {
+        self.setupOverlayView(inView)
+        let willHaveTitle = (withTitle != nil) ? true : false
+        let willHaveSubtitle = withSubTitle != nil ? true : false
+        
+        self.subviewArray = []
+        self.setupSuccessView()
+        self.subviewArray.append(self.successView)
+        
+        if willHaveTitle {
+            self.setupTitleLabel(withTitle!, withProgressView: true, withSubtitle: willHaveSubtitle)
+            self.subviewArray.append(self.titleLabel)
+        }
+        if willHaveSubtitle {
+            self.setupSubtitleLabel(withSubTitle!, withProgressView: true)
+            self.subviewArray.append(self.subtitleLabel)
+        }
+        self.addSubviews()
+        self.bringIntoView()
+        NSTimer.scheduledTimerWithTimeInterval(self.successViewRemovalInterval, target: self, selector: "hideLoader", userInfo: nil, repeats: false)
+    }
+    
+    public func showWithError(inView:UIView, withTitle:String?, withSubTitle:String?)
+    {
+        self.setupOverlayView(inView)
+        let willHaveTitle = (withTitle != nil) ? true : false
+        let willHaveSubtitle = withSubTitle != nil ? true : false
+        
+        self.subviewArray = []
+        self.setupErrorView()
+        self.subviewArray.append(self.errorView)
+        
+        if willHaveTitle {
+            self.setupTitleLabel(withTitle!, withProgressView: true, withSubtitle: willHaveSubtitle)
+            self.subviewArray.append(self.titleLabel)
+        }
+        if willHaveSubtitle {
+            self.setupSubtitleLabel(withSubTitle!, withProgressView: true)
+            self.subviewArray.append(self.subtitleLabel)
+        }
+        self.addSubviews()
+        self.bringIntoView()
+        NSTimer.scheduledTimerWithTimeInterval(self.errorViewRemovalInterval, target: self, selector: "hideLoader", userInfo: nil, repeats: false)
+    }
+    
     public func hideLoader()
     {
         self.removeFromView()
@@ -128,6 +193,138 @@ public class RBHUD: NSObject {
         }
     }
     
+    private func setupSuccessView()
+    {
+        if !self.wasSuccessViewInitialised {
+            self.successView = UIImageView(frame: CGRectMake(0, 0, self.progressViewSize, self.progressViewSize))
+            self.successView.layer.addSublayer(self.setupSuccessViewLayer())
+            
+            let successWidth:CGFloat = self.progressViewSize
+            let successHeight:CGFloat = self.progressViewSize
+            let successX:CGFloat = (self.parentView.frame.size.width / 2) - (successWidth / 2)
+            let successY:CGFloat = (self.parentView.frame.size.height / 2) - (successHeight / 2)
+            self.successViewCurrentRect = CGRectMake(successX, successY, successWidth, successHeight)
+            self.successViewTargetRect = CGRectMake(successX, successY, successWidth, successHeight)
+            self.successView.frame = self.successViewCurrentRect
+            self.wasSuccessViewInitialised = true
+        }
+    }
+    
+    private func setupSuccessViewLayer() -> CAShapeLayer
+    {
+        let bezierPath = UIBezierPath()
+        bezierPath.moveToPoint(CGPointMake(0, self.progressViewSize * 0.56))
+        bezierPath.addLineToPoint(CGPointMake(self.progressViewSize * 0.42, self.progressViewSize))
+        
+        let compoundLayer = CAShapeLayer()
+        let layer_1 = CAShapeLayer()
+        layer_1.path = bezierPath.CGPath
+        layer_1.bounds = CGPathGetBoundingBox(layer_1.path)
+        layer_1.strokeColor = self.successViewStrokeColor.CGColor
+        layer_1.fillColor = UIColor.clearColor().CGColor
+        layer_1.lineWidth = self.successViewLineWidth
+        layer_1.position = CGPointMake(0, self.progressViewSize * 0.56)
+        layer_1.anchorPoint = CGPointMake(0, 0)
+        
+        let animation_1 = CABasicAnimation(keyPath: "strokeEnd")
+        animation_1.duration = 0.2
+        animation_1.fromValue = NSNumber(float: 0.0)
+        animation_1.toValue = NSNumber(float: 1.0)
+        animation_1.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        layer_1.addAnimation(animation_1, forKey: "strokeEnd")
+        
+        let bezier2Path = UIBezierPath()
+        bezier2Path.moveToPoint(CGPointMake(self.progressViewSize * 0.42, self.progressViewSize))
+        bezier2Path.addLineToPoint(CGPointMake(self.progressViewSize, 0))
+        
+        let layer_2 = CAShapeLayer()
+        layer_2.path = bezier2Path.CGPath
+        layer_2.bounds = CGPathGetBoundingBox(layer_2.path)
+        layer_2.strokeColor = self.successViewStrokeColor.CGColor
+        layer_2.fillColor = UIColor.clearColor().CGColor
+        layer_2.lineWidth = self.successViewLineWidth
+        layer_2.position = CGPointMake(self.progressViewSize * 0.42, 0)
+        layer_2.anchorPoint = CGPointMake(0, 0)
+        let animation_2 = CABasicAnimation(keyPath: "strokeEnd")
+        animation_2.duration = 0.3
+        animation_2.timeOffset = 0.3
+        animation_2.fromValue = NSNumber(float: 0.0)
+        animation_2.toValue = NSNumber(float: 1.0)
+        animation_2.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        layer_2.addAnimation(animation_2, forKey: "strokeEnd")
+        
+        compoundLayer.addSublayer(layer_1)
+        compoundLayer.addSublayer(layer_2)
+        
+        return compoundLayer
+    }
+    
+    private func setupErrorView()
+    {
+        if !self.wasErrorViewInitialised {
+            self.errorView = UIImageView(frame: CGRectMake(0, 0, self.progressViewSize, self.progressViewSize))
+            self.errorView.layer.addSublayer(self.setupErrorViewLayer())
+            
+            let errorWidth:CGFloat = self.progressViewSize
+            let errorHeight:CGFloat = self.progressViewSize
+            let errorX:CGFloat = (self.parentView.frame.size.width / 2) - (errorWidth / 2)
+            let errorY:CGFloat = (self.parentView.frame.size.height / 2) - (errorHeight / 2)
+            self.errorViewCurrentRect = CGRectMake(errorX, errorY, errorWidth, errorHeight)
+            self.errorViewTargetRect = CGRectMake(errorX, errorY, errorWidth, errorHeight)
+            self.errorView.frame = self.errorViewCurrentRect
+            self.wasErrorViewInitialised = true
+        }
+    }
+    
+    private func setupErrorViewLayer() -> CAShapeLayer
+    {
+        let bezierPath = UIBezierPath()
+        bezierPath.moveToPoint(CGPointMake(10, 10))
+        bezierPath.addLineToPoint(CGPointMake(self.progressViewSize - 10, self.progressViewSize - 10))
+        
+        let bezier2Path = UIBezierPath()
+        bezier2Path.moveToPoint(CGPointMake(self.progressViewSize - 10, 10))
+        bezier2Path.addLineToPoint(CGPointMake(10, self.progressViewSize - 10))
+        
+        let compoundLayer = CAShapeLayer()
+        let layer_1 = CAShapeLayer()
+        layer_1.path = bezierPath.CGPath
+        layer_1.bounds = CGPathGetBoundingBox(layer_1.path)
+        layer_1.strokeColor = self.errorViewStrokeColor.CGColor
+        layer_1.fillColor = UIColor.clearColor().CGColor
+        layer_1.lineWidth = self.errorViewLineWidth
+        layer_1.position = CGPointMake(10, 10)
+        layer_1.anchorPoint = CGPointMake(0, 0)
+        
+        let animation_1 = CABasicAnimation(keyPath: "strokeEnd")
+        animation_1.duration = 0.3
+        animation_1.fromValue = NSNumber(float: 0.0)
+        animation_1.toValue = NSNumber(float: 1.0)
+        layer_1.addAnimation(animation_1, forKey: "strokeEnd")
+        
+        
+        let layer_2 = CAShapeLayer()
+        layer_2.path = bezier2Path.CGPath
+        layer_2.bounds = CGPathGetBoundingBox(layer_2.path)
+        layer_2.strokeColor = self.errorViewStrokeColor.CGColor
+        layer_2.fillColor = UIColor.clearColor().CGColor
+        layer_2.lineWidth = self.errorViewLineWidth
+        layer_2.position = CGPointMake(10, 10)
+        layer_2.anchorPoint = CGPointMake(0, 0)
+        let animation_2 = CABasicAnimation(keyPath: "strokeEnd")
+        animation_2.duration = 0.1
+        animation_2.timeOffset = 0.1
+        animation_2.fromValue = NSNumber(float: 0.0)
+        animation_2.toValue = NSNumber(float: 1.0)
+        layer_2.addAnimation(animation_2, forKey: "strokeEnd")
+        
+        
+        compoundLayer.addSublayer(layer_1)
+        compoundLayer.addSublayer(layer_2)
+        
+        return compoundLayer
+    }
+    
     private func setupProgressView()
     {
         if !self.wasProgressViewInitialised {
@@ -152,6 +349,7 @@ public class RBHUD: NSObject {
         self.progressView.transform = CGAffineTransformMakeScale(0, 0)
         self.wasProgressViewInitialised = true
     }
+    
     private func setupProgressViewLayer() -> CAShapeLayer
     {
         let boundsRect = CGRectMake(0, 0, self.progressViewSize, self.progressViewSize)
@@ -198,11 +396,19 @@ public class RBHUD: NSObject {
             if !withSubtitle {
                 titleLabelY -= titleLabelHeight / 2
             }
-            let prevTransform = self.progressView.transform
-            self.progressView.transform = CGAffineTransformMakeScale(1, 1)
-            titleLabelY -= self.progressView.frame.size.height / 2
-            self.progressView.transform = prevTransform
-            titleLabelY -= self.progressViewPadding
+            if self.subviewArray.contains(self.progressView) {
+                let prevTransform = self.progressView.transform
+                self.progressView.transform = CGAffineTransformMakeScale(1, 1)
+                titleLabelY -= self.progressView.frame.size.height / 2
+                self.progressView.transform = prevTransform
+                titleLabelY -= self.progressViewPadding
+            } else if self.subviewArray.contains(self.errorView) {
+                titleLabelY -= self.errorView.frame.size.height / 2
+                titleLabelY -= self.progressViewPadding
+            } else if self.subviewArray.contains(self.successView) {
+                titleLabelY -= self.successView.frame.size.height / 2
+                titleLabelY -= self.progressViewPadding
+            }
         }
         self.titleLabelTargetRect = CGRectMake(titleLabelX, titleLabelY, titleLabelWidth, titleLabelHeight)
         self.titleLabelCurrentRect = self.titleLabel.frame
@@ -225,11 +431,19 @@ public class RBHUD: NSObject {
         let subtitleLabelX:CGFloat = 20.0
         var subtitleLabelY:CGFloat = self.parentView.frame.size.height / 2
         if withProgressView {
-            let prevTransform = self.progressView.transform
-            self.progressView.transform = CGAffineTransformMakeScale(1, 1)
-            subtitleLabelY += self.progressView.frame.size.height / 2
-            self.progressView.transform = prevTransform
-            subtitleLabelY += self.progressViewPadding
+            if self.subviewArray.contains(self.progressView) {
+                let prevTransform = self.progressView.transform
+                self.progressView.transform = CGAffineTransformMakeScale(1, 1)
+                subtitleLabelY += self.progressView.frame.size.height / 2
+                self.progressView.transform = prevTransform
+                subtitleLabelY += self.progressViewPadding
+            } else if self.subviewArray.contains(self.errorView) {
+                subtitleLabelY += self.errorView.frame.size.height / 2
+                subtitleLabelY += self.progressViewPadding
+            } else if self.subviewArray.contains(self.successView) {
+                subtitleLabelY += self.successView.frame.size.height / 2
+                subtitleLabelY += self.progressViewPadding
+            }
         }
         self.subtitleLabelTargetRect = CGRectMake(subtitleLabelX, subtitleLabelY, subtitleLabelWidth, subtitleLabelHeight)
         self.subtitleLabelCurrentRect = self.subtitleLabel.frame
@@ -303,6 +517,16 @@ public class RBHUD: NSObject {
                     self.progressView.alpha = 0
                     }, completion:nil)
             }
+            if self.subviewArray.contains(self.errorView) {
+                UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                    self.errorView.frame = self.errorViewTargetRect
+                    self.errorView.alpha = 1
+                    }, completion:nil)
+            } else {
+                UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                    self.errorView.alpha = 0
+                    }, completion:nil)
+            }
         })
     }
     
@@ -314,9 +538,17 @@ public class RBHUD: NSObject {
                 UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                     self.overlayView.alpha = 0
                     }) { (Bool) -> Void in
+                        self.parentView.userInteractionEnabled = true
+                        
                         self.finishedAnimations = true
                         self.isLoaderShown = false
-                        self.parentView.userInteractionEnabled = true
+                        
+                        self.wasSuccessViewInitialised = false
+                        self.wasErrorViewInitialised = false
+                        self.wasProgressViewInitialised = false
+                        self.wasSubtitleLabelInitialised = false
+                        self.wasTitleLabelInitialised = false
+                        
                         self.overlayView.removeFromSuperview()
                 }
             })

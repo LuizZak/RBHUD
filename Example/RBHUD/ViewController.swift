@@ -40,6 +40,15 @@ class ViewController: UIViewController {
         // The fill color of the progress view
         self.hud.progressViewFillColor = UIColor.clearColor()
         
+        // The line width for the success mark
+        self.hud.successViewLineWidth = 1.0
+        // The line color for the success mark
+        self.hud.successViewStrokeColor = UIColor.greenColor()
+        
+        // The line width for the error mark
+        self.hud.errorViewLineWidth = 1.0
+        // The line color for the error mark
+        self.hud.errorViewStrokeColor = UIColor.redColor()
         
         // The distance the text labels have to travel when appearing
         self.hud.labelAnimationDistance = 50.0
@@ -65,6 +74,12 @@ class ViewController: UIViewController {
         selector_0()
     }
     
+    @IBAction func showSuccessHUD(sender: AnyObject) {
+        self.hud.showWithSuccess(self.view, withTitle: "Success", withSubTitle: "The task ended up successfully!")
+    }
+    @IBAction func showErrorHUD(sender: AnyObject) {
+        self.hud.showWithError(self.view, withTitle: "Oops!", withSubTitle: "A sample error occured!")
+    }
     func selector_0()
     {
         // HUD with only a title
@@ -108,8 +123,6 @@ class ViewController: UIViewController {
     func selector_6()
     {
         self.hud.hideLoader()
-        
     }
-
 }
 
