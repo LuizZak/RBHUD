@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "RBHUD"
-  s.version          = "0.1.0"
+  s.version          = "0.0.1"
   s.summary          = "HUD written in Swift - Ready to use, no muss, no fuss..."
   s.description      = <<-DESC
 HUD written in Swift - Ready to use, no muss, no fuss... Highly reusable HUD, completely written in Swift.
