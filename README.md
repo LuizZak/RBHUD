@@ -1,15 +1,28 @@
 # RBHUD
 
-[![CI Status](http://img.shields.io/travis/Robert Bojor/RBHUD.svg?style=flat)](https://travis-ci.org/Robert Bojor/RBHUD)
 [![Version](https://img.shields.io/cocoapods/v/RBHUD.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
 [![License](https://img.shields.io/cocoapods/l/RBHUD.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
-[![Platform](https://img.shields.io/cocoapods/p/RBHUD.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
+[![Platform](http://img.shields.io/badge/iOS-8.3%2B-blue.svg)]() [![Language](http://img.shields.io/badge/Swift-2.0-orange.svg)]() 
 
 HUD written in **Swift** - Ready to use, no muss, no fuss...
 
-## How To
-Drag the RBHUD.swift file into your project and start using it - That's it!
+![RBHUD written in Swift](https://github.com/robertBojor/RBHUD/blob/master/RBHUD/hud_gif.gif)
 
+## How To
+### Install it using CocoaPods
+
+```
+pod 'RBHUD'
+```
+
+After running `pod update`, and opening the workspace file, you will need add the framework in the **Linked Frameworks and Libraries** and also under the **Build Phases > Link Binary With Libraries**. Once correctly linked, just build once to make sure it works, and you did everything correctly.
+
+All you'll need now is to `import RBHUD` in the classes where you want to use it - That's it!
+
+### Install it manually
+Download the archived repo, unzip it on your drive somewhere and just drag the RBHUD.swift file into your project and start using it - That's it!
+
+### Use it in your project
 - Declare a variable in your ViewController
 ```
 let hud = RBHUD.sharedInstance
@@ -59,7 +72,7 @@ self.hud.hideLoader()
 The standard way of using the HUD will resemble the code below...
 ```
 self.hud.showLoader(self.view, withTitle:"Testing", withSubTitle:nil, withProgress:true)
-dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
     // Your longer task code goes here...
     dispatch_async(dispatch_get_main_queue(), { () -> Void in
         self.hud.hideLoader()
@@ -72,7 +85,7 @@ If at any step in your code, you need to update the HUD's look, like for example
 func someMethod()
 {
     self.hud.showLoader(self.view, withTitle:"Testing", withSubTitle:nil, withProgress:true)
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
         // Your longer task code goes here...
         if self.thisVar == 0 {
             self.hud.showLoader(self.view, withTitle:"New title", withSubTitle:"and subtitle", withProgress:false)
