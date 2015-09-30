@@ -8,7 +8,7 @@ HUD written in Swift - Ready to use, no muss, no fuss... Highly reusable HUD, co
   s.homepage         = "https://github.com/robertBojor/RBHUD"
   s.license          = 'MIT'
   s.author           = { "Robert Bojor" => "robert.bojor@gmail.com" }
-  s.source           = { :git => "https://github.com/robertBojor/RBHUD.git", :tag => s.version.to_s, :commit => "7eaff4a81ef7df57be0903dcc8b48e93f6667f8c" }
+  s.source           = { :git => "https://github.com/robertBojor/RBHUD.git", :tag => s.version.to_s, :commit => "8f39a7e4a7f6238daa3b29f5a33020382b5573cc" }
   s.social_media_url = 'https://twitter.com/robert_bojor'
   s.platform     = :ios, '8.3'
   s.requires_arc = true
