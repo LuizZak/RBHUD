@@ -1,0 +1,6 @@
+framework module Pods_RBHUD_Example {
+  umbrella header "Pods-RBHUD_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

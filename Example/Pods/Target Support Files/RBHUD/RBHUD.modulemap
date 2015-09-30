@@ -1,0 +1,6 @@
+framework module RBHUD {
+  umbrella header "RBHUD-umbrella.h"
+
+  export *
+  module * { export * }
+}
