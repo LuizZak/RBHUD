@@ -13,7 +13,8 @@ HUD written in **Swift** - Ready to use, no muss, no fuss...
 ### Install it using CocoaPods
 
 ```
-pod 'RBHUD'
+use_frameworks!
+pod "RBHUD", :git => "https://github.com/robertBojor/RBHUD.git", :tag => "0.0.2"
 ```
 
 After running `pod update`, and opening the workspace file, you will need add the framework in the **Linked Frameworks and Libraries** and also under the **Build Phases > Link Binary With Libraries**. Once correctly linked, just build once to make sure it works, and you did everything correctly.
