@@ -141,7 +141,7 @@ public class RBHUD: NSObject {
         }
         self.addSubviews()
         self.bringIntoView()
-        NSTimer.scheduledTimerWithTimeInterval(self.successViewRemovalInterval, target: self, selector: "hideLoader", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(self.successViewRemovalInterval, target: self, selector: #selector(RBHUD.hideLoader), userInfo: nil, repeats: false)
     }
     
     public func showWithError(inView:UIView, withTitle:String?, withSubTitle:String?)
@@ -164,7 +164,7 @@ public class RBHUD: NSObject {
         }
         self.addSubviews()
         self.bringIntoView()
-        NSTimer.scheduledTimerWithTimeInterval(self.errorViewRemovalInterval, target: self, selector: "hideLoader", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(self.errorViewRemovalInterval, target: self, selector: #selector(RBHUD.hideLoader), userInfo: nil, repeats: false)
     }
     
     public func hideLoader()
