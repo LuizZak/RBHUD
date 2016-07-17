@@ -1,9 +1,9 @@
 # RBHUD
 
-[![Version](https://img.shields.io/badge/version-0.0.2-green.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
+[![Version](https://img.shields.io/badge/version-0.0.3-green.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://cocoapods.org/pods/RBHUD)
 [![Platform](http://img.shields.io/badge/iOS-8.3%2B-blue.svg?style=flat)]()
-[![Language](http://img.shields.io/badge/Swift-2.0-orange.svg?style=flat)]() 
+[![Language](http://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)]() 
 
 HUD written in **Swift** - Ready to use, no muss, no fuss...
 
@@ -14,7 +14,7 @@ HUD written in **Swift** - Ready to use, no muss, no fuss...
 
 ```
 use_frameworks!
-pod "RBHUD", :git => "https://github.com/robertBojor/RBHUD.git", :tag => "0.0.2"
+pod "RBHUD", :git => "https://github.com/robertBojor/RBHUD.git", :tag => "0.0.3"
 ```
 
 After running `pod update`, and opening the workspace file, you will need add the framework in the **Linked Frameworks and Libraries** and also under the **Build Phases > Link Binary With Libraries**. Once correctly linked, just build once to make sure it works, and you did everything correctly.
