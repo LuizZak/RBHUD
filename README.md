@@ -12,7 +12,7 @@ HUD written in **Swift** - Ready to use, no muss, no fuss...
 ## How To
 ### Install it using CocoaPods
 
-```
+```ruby
 use_frameworks!
 pod "RBHUD", :git => "https://github.com/robertBojor/RBHUD.git", :tag => "0.0.3"
 ```
@@ -26,11 +26,11 @@ Download the archived repo, unzip it on your drive somewhere and just drag the R
 
 ### Use it in your project
 - Declare a variable in your ViewController
-```
+```swift
 let hud = RBHUD.sharedInstance
 ```
 - Configure the HUD using any of the 15 available options. Ommitting any of the configuration variables will make the HUD load the defaults ( the actual values seen below )
-```
+```swift
 self.hud.backdropOpacity = 0.8    // The opacity of the background
 self.hud.backdropUsesBlur = true    // Option for the background if it should use a blur effect or not
 self.hud.backdropBlurStyle = UIBlurEffectStyle.dark   // The blur style, if it's using a blue effect
@@ -59,7 +59,7 @@ self.hud.labelSubtitleTextColor = UIColor.white    // The text color for the sub
 ```
 
 - Call the show method
-```
+```swift
 self.hud.showLoader(inView:UIView!, withTitle:String?, withSubTitle:String?, withProgress:Bool)
 ```
 The `showLoader` method has 4 parameters, 2 of which are optional:
@@ -72,7 +72,7 @@ The `showLoader` method has 4 parameters, 2 of which are optional:
 If at any step in your code, you need to update the HUD's look, like for example change the title text and add a progress indicator, you can do so by calling the `showLoader` method again using the new parameters, and the HUD will update itself with the new data while still being presented.
 
 - Call the show with a success mark method
-```
+```swift
 self.hud.showWithSuccess(self.view, withTitle: "Success", withSubTitle: "The task ended up successfully!")
 ```
 The `showWithSuccess` method has 3 parameters, 2 of which are optional:
@@ -82,7 +82,7 @@ The `showWithSuccess` method has 3 parameters, 2 of which are optional:
 - `withSubTitle:String?` is the text string that will be shown as a subtitle when the loader is presented. When sending this as `nil`, the HUD will not present a subtitle text
 
 - Call the show with an error mark method
-```
+```swift
 self.hud.showWithError(self.view, withTitle: "Oops", withSubTitle: "En error occured!")
 ```
 The `showWithError` method has 3 parameters, 2 of which are optional:
@@ -94,14 +94,14 @@ The `showWithError` method has 3 parameters, 2 of which are optional:
 Both `showWithError` and `showWithSuccess` methods are going to close the HUD in a few seconds, so there's no need to call the hide method.
 
 - Call the hide method when you're done with your the long action
-```
+```swift
 self.hud.hideLoader()
 ```
 
 ## Usage examples
 
 The standard way of using the HUD will resemble the code below...
-```
+```swift
 self.hud.showLoader(self.view, withTitle:"Testing", withSubTitle:nil, withProgress:true)
 DispatchQueue.global().async {
     // Your longer task code goes here...
@@ -112,7 +112,7 @@ DispatchQueue.global().async {
 ```
 
 If at any step in your code, you need to update the HUD's look, like for example change the title text and add a progress indicator, you can do so by calling the `showLoader` method again using the new parameters, and the HUD will update itself with the new data while still being presented. For example:
-```
+```swift
 func someMethod()
 {
     self.hud.showLoader(self.view, withTitle:"Testing", withSubTitle: nil, withProgress:true)
