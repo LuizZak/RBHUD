@@ -15,12 +15,12 @@ open class RBHUD: NSObject {
     // MARK: - Vars
     fileprivate var overlayView:UIView = UIView()
     fileprivate var parentView:UIView = UIView()
-    fileprivate var progressView:UIImageView!
-    fileprivate var errorView:UIImageView!
-    fileprivate var successView:UIImageView!
-    fileprivate var titleLabel:UILabel!
-    fileprivate var subtitleLabel:UILabel!
-    fileprivate var subviewArray:Array<UIView>!
+    fileprivate var progressView:UIImageView
+    fileprivate var errorView:UIImageView
+    fileprivate var successView:UIImageView
+    fileprivate var titleLabel:UILabel
+    fileprivate var subtitleLabel:UILabel
+    fileprivate var subviewArray:[UIView] = []
     
     fileprivate var finishedAnimations = false
     fileprivate var isLoaderShown = false
@@ -94,6 +94,8 @@ open class RBHUD: NSObject {
         self.subtitleLabel.textColor = self.labelSubtitleTextColor
         self.subtitleLabel.backgroundColor = UIColor.clear
         self.subtitleLabel.textAlignment = NSTextAlignment.center
+        
+        super.init()
     }
     
     // MARK: - Public methods
