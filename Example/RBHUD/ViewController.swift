@@ -83,40 +83,40 @@ class ViewController: UIViewController {
     func selector_0()
     {
         // HUD with only a title
-        self.hud.showLoader(self.view, withTitle: "Just a title", withSubTitle: nil, withProgress: false)
+        self.hud.showLoader(self.view, withTitle: "Just a title", withSubtitle: nil, withProgress: false)
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(ViewController.selector_1), userInfo: nil, repeats: false)
     }
     func selector_1()
     {
         // HUD with a title and subtitle
-        self.hud.showLoader(self.view, withTitle: "Another title, but also", withSubTitle: "a subtitle, \non multiple rows", withProgress: false)
+        self.hud.showLoader(self.view, withTitle: "Another title, but also", withSubtitle: "a subtitle, \non multiple rows", withProgress: false)
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(ViewController.selector_2), userInfo: nil, repeats: false)
     }
     
     func selector_2()
     {
         // HUD with a title, subtitle and a progress view
-        self.hud.showLoader(self.view, withTitle: "Now I have a title and \na progress view!", withSubTitle: "But also a subtitle... Magic innit?", withProgress: true)
+        self.hud.showLoader(self.view, withTitle: "Now I have a title and \na progress view!", withSubtitle: "But also a subtitle... Magic innit?", withProgress: true)
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(ViewController.selector_3), userInfo: nil, repeats: false)
     }
     
     func selector_3()
     {
         // HUD with just a progress view
-        self.hud.showLoader(self.view, withTitle: nil, withSubTitle: nil, withProgress: true)
+        self.hud.showLoader(self.view, withTitle: nil, withSubtitle: nil, withProgress: true)
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(ViewController.selector_4), userInfo: nil, repeats: false)
     }
     
     func selector_4()
     {
         // HUD with a title and a progress view
-        self.hud.showLoader(self.view, withTitle: "That was just a progress view.\nNothing's broken...", withSubTitle: nil, withProgress: true)
+        self.hud.showLoader(self.view, withTitle: "That was just a progress view.\nNothing's broken...", withSubtitle: nil, withProgress: true)
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(ViewController.selector_5), userInfo: nil, repeats: false)
     }
     func selector_5()
     {
         // HUD with a title, subtitle and a progress view
-        self.hud.showLoader(self.view, withTitle: "That was just a progress view.\nNothing's broken...", withSubTitle: "Next I'll dissapear...\nBye bye!", withProgress: true)
+        self.hud.showLoader(self.view, withTitle: "That was just a progress view.\nNothing's broken...", withSubtitle: "Next I'll dissapear...\nBye bye!", withProgress: true)
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(ViewController.selector_6), userInfo: nil, repeats: false)
     }
     

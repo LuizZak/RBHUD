@@ -66,6 +66,10 @@ open class RBHUD: NSObject {
     open var errorViewRemovalInterval:TimeInterval = 5
     open var successViewRemovalInterval:TimeInterval = 5
     
+    fileprivate var title: String?
+    fileprivate var hasProgress: Bool = false
+    fileprivate var subtitle: String?
+    
     public override init()
     {
         self.overlayView.alpha = 0
@@ -99,46 +103,46 @@ open class RBHUD: NSObject {
     }
     
     // MARK: - Public methods
-    open func showLoader(_ inView:UIView, withTitle:String?, withSubTitle:String?, withProgress:Bool)
+    open func showLoader(_ inView:UIView, withTitle title:String?, withSubtitle subtitle:String?, withProgress showProgress:Bool)
     {
         self.setupOverlayView(inView)
         
-        let willHaveTitle = (withTitle != nil) ? true : false
-        let willHaveSubtitle = withSubTitle != nil ? true : false
+        let willHaveTitle = (title != nil) ? true : false
+        let willHaveSubtitle = subtitle != nil ? true : false
         
         self.subviewArray = []
-        if withProgress {
+        if showProgress {
             self.setupProgressView()
             self.subviewArray.append(self.progressView)
         }
         if willHaveTitle {
-            self.setupTitleLabel(withTitle!, withProgressView: withProgress, withSubtitle: willHaveSubtitle)
+            self.setupTitleLabel(title!, withProgressView: showProgress, withSubtitle: willHaveSubtitle)
             self.subviewArray.append(self.titleLabel)
         }
         if willHaveSubtitle {
-            self.setupSubtitleLabel(withSubTitle!, withProgressView: withProgress)
+            self.setupSubtitleLabel(subtitle!, withProgressView: showProgress)
             self.subviewArray.append(self.subtitleLabel)
         }
         self.addSubviews()
         self.bringIntoView()
     }
     
-    open func showWithSuccess(_ inView:UIView, withTitle:String?, withSubTitle:String?)
+    open func showWithSuccess(_ inView:UIView, withTitle title: String?, withSubTitle subtitle: String?)
     {
         self.setupOverlayView(inView)
-        let willHaveTitle = (withTitle != nil) ? true : false
-        let willHaveSubtitle = withSubTitle != nil ? true : false
+        let willHaveTitle = (title != nil) ? true : false
+        let willHaveSubtitle = subtitle != nil ? true : false
         
         self.subviewArray = []
         self.setupSuccessView()
         self.subviewArray.append(self.successView)
         
         if willHaveTitle {
-            self.setupTitleLabel(withTitle!, withProgressView: true, withSubtitle: willHaveSubtitle)
+            self.setupTitleLabel(title!, withProgressView: true, withSubtitle: willHaveSubtitle)
             self.subviewArray.append(self.titleLabel)
         }
         if willHaveSubtitle {
-            self.setupSubtitleLabel(withSubTitle!, withProgressView: true)
+            self.setupSubtitleLabel(subtitle!, withProgressView: true)
             self.subviewArray.append(self.subtitleLabel)
         }
         self.addSubviews()
@@ -146,22 +150,22 @@ open class RBHUD: NSObject {
         Timer.scheduledTimer(timeInterval: self.successViewRemovalInterval, target: self, selector: #selector(RBHUD.hideLoader), userInfo: nil, repeats: false)
     }
     
-    open func showWithError(_ inView:UIView, withTitle:String?, withSubTitle:String?)
+    open func showWithError(_ inView:UIView, withTitle title: String?, withSubTitle subtitle: String?)
     {
         self.setupOverlayView(inView)
-        let willHaveTitle = (withTitle != nil) ? true : false
-        let willHaveSubtitle = withSubTitle != nil ? true : false
+        let willHaveTitle = (title != nil) ? true : false
+        let willHaveSubtitle = subtitle != nil ? true : false
         
         self.subviewArray = []
         self.setupErrorView()
         self.subviewArray.append(self.errorView)
         
         if willHaveTitle {
-            self.setupTitleLabel(withTitle!, withProgressView: true, withSubtitle: willHaveSubtitle)
+            self.setupTitleLabel(title!, withProgressView: true, withSubtitle: willHaveSubtitle)
             self.subviewArray.append(self.titleLabel)
         }
         if willHaveSubtitle {
-            self.setupSubtitleLabel(withSubTitle!, withProgressView: true)
+            self.setupSubtitleLabel(subtitle!, withProgressView: true)
             self.subviewArray.append(self.subtitleLabel)
         }
         self.addSubviews()
@@ -343,7 +347,7 @@ open class RBHUD: NSObject {
         }
         
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotationAnimation.toValue = M_PI
+        rotationAnimation.toValue = CGFloat.pi
         rotationAnimation.duration = self.progressAnimationDuration
         rotationAnimation.isCumulative = true
         rotationAnimation.repeatCount = Float(self.progressAnimationRepeatCount)
@@ -356,7 +360,7 @@ open class RBHUD: NSObject {
     {
         let boundsRect = CGRect(x: 0, y: 0, width: self.progressViewSize, height: self.progressViewSize)
         let partialPath = UIBezierPath()
-        partialPath.addArc(withCenter: CGPoint(x: boundsRect.midX, y: boundsRect.midY), radius: boundsRect.width / 2, startAngle: 0 * CGFloat(M_PI)/180, endAngle: -45 * CGFloat(M_PI)/180, clockwise: true)
+        partialPath.addArc(withCenter: CGPoint(x: boundsRect.midX, y: boundsRect.midY), radius: boundsRect.width / 2, startAngle: 0 * CGFloat.pi/180, endAngle: -45 * CGFloat.pi/180, clockwise: true)
         
         let fullPath = UIBezierPath(ovalIn: boundsRect)
         
@@ -382,20 +386,20 @@ open class RBHUD: NSObject {
         return strokeLine
     }
     
-    fileprivate func setupTitleLabel(_ havingTitle:String, withProgressView:Bool, withSubtitle:Bool)
+    fileprivate func setupTitleLabel(_ title:String, withProgressView useProgressView: Bool, withSubtitle subtitle: Bool)
     {
-        self.titleLabel.text = havingTitle
+        self.titleLabel.text = title
         self.titleLabel.sizeToFit()
         let titleLabelWidth:CGFloat = self.parentView.frame.size.width - 40.0
         let titleLabelHeight:CGFloat = self.titleLabel.frame.size.height
         let titleLabelX:CGFloat = 20.0
         var titleLabelY:CGFloat = (self.parentView.frame.size.height / 2) - titleLabelHeight / 2
         
-        if withSubtitle {
+        if subtitle {
             titleLabelY -= titleLabelHeight / 2
         }
-        if withProgressView {
-            if !withSubtitle {
+        if useProgressView {
+            if !subtitle {
                 titleLabelY -= titleLabelHeight / 2
             }
             if self.subviewArray.contains(self.progressView) {
