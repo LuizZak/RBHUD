@@ -173,7 +173,7 @@ open class RBHUD: NSObject {
         Timer.scheduledTimer(timeInterval: self.errorViewRemovalInterval, target: self, selector: #selector(RBHUD.hideLoader), userInfo: nil, repeats: false)
     }
     
-    open func hideLoader()
+    @objc open func hideLoader()
     {
         self.removeFromView()
     }

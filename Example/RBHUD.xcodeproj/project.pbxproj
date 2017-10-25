@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2582A61171A67113285922D6 /* Pods_RBHUD_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD7581CD29A410F7F76F891 /* Pods_RBHUD_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0ADBADCA6FC858B75AFDDABA /* Pods_RBHUD_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D48A7B4A8D371DA64096365 /* Pods_RBHUD_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		7483200CEAB881135E336E98 /* Pods_RBHUD_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED49B8135F0B68D90D719386 /* Pods_RBHUD_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BF8D561319213993F0A3D5E0 /* Pods_RBHUD_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3D2172845DC17E0162C13C /* Pods_RBHUD_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,8 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A78B6D879E9F925FEAD4EC2 /* Pods-RBHUD_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBHUD_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RBHUD_Example/Pods-RBHUD_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		39F8265A8A676045CB608495 /* Pods-RBHUD_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBHUD_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RBHUD_Tests/Pods-RBHUD_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		24F682D06CFEA059C2F306EB /* Pods-RBHUD_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBHUD_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-RBHUD_Example/Pods-RBHUD_Example.release.xcconfig"; sourceTree = "<group>"; };
 		48B78A30E4058EEE689F1991 /* RBHUD.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RBHUD.podspec; path = ../RBHUD.podspec; sourceTree = "<group>"; };
 		5D57B69165C764979CD34176 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* RBHUD_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RBHUD_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,10 +42,11 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6618B4B0A919876911070D03 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		6CD7581CD29A410F7F76F891 /* Pods_RBHUD_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RBHUD_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		74784B84455E8E9BA22C9768 /* Pods-RBHUD_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBHUD_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-RBHUD_Example/Pods-RBHUD_Example.release.xcconfig"; sourceTree = "<group>"; };
-		EB2A9CFB895C793199FE0B92 /* Pods-RBHUD_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBHUD_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RBHUD_Tests/Pods-RBHUD_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		ED49B8135F0B68D90D719386 /* Pods_RBHUD_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RBHUD_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D48A7B4A8D371DA64096365 /* Pods_RBHUD_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RBHUD_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D58A880F7CA5F4D5FC6DD6D /* Pods-RBHUD_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBHUD_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RBHUD_Example/Pods-RBHUD_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9B3D2172845DC17E0162C13C /* Pods_RBHUD_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RBHUD_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7B901782738F36C779FADCB /* Pods-RBHUD_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBHUD_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RBHUD_Tests/Pods-RBHUD_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB07F7B71A558ED96C2C9521 /* Pods-RBHUD_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBHUD_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RBHUD_Tests/Pods-RBHUD_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7483200CEAB881135E336E98 /* Pods_RBHUD_Example.framework in Frameworks */,
+				0ADBADCA6FC858B75AFDDABA /* Pods_RBHUD_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,13 +62,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2582A61171A67113285922D6 /* Pods_RBHUD_Tests.framework in Frameworks */,
+				BF8D561319213993F0A3D5E0 /* Pods_RBHUD_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B9FBB2319055E55C25FEF00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D48A7B4A8D371DA64096365 /* Pods_RBHUD_Example.framework */,
+				9B3D2172845DC17E0162C13C /* Pods_RBHUD_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -76,8 +85,8 @@
 				607FACD21AFB9204008FA782 /* Example for RBHUD */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				95F56F54D23B803E470883F7 /* Pods */,
-				F9710FADE7C9694E4E6EADE6 /* Frameworks */,
+				E61B48F21E81A67519642B07 /* Pods */,
+				3B9FBB2319055E55C25FEF00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,24 +148,15 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		95F56F54D23B803E470883F7 /* Pods */ = {
+		E61B48F21E81A67519642B07 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1A78B6D879E9F925FEAD4EC2 /* Pods-RBHUD_Example.debug.xcconfig */,
-				74784B84455E8E9BA22C9768 /* Pods-RBHUD_Example.release.xcconfig */,
-				39F8265A8A676045CB608495 /* Pods-RBHUD_Tests.debug.xcconfig */,
-				EB2A9CFB895C793199FE0B92 /* Pods-RBHUD_Tests.release.xcconfig */,
+				7D58A880F7CA5F4D5FC6DD6D /* Pods-RBHUD_Example.debug.xcconfig */,
+				24F682D06CFEA059C2F306EB /* Pods-RBHUD_Example.release.xcconfig */,
+				D7B901782738F36C779FADCB /* Pods-RBHUD_Tests.debug.xcconfig */,
+				DB07F7B71A558ED96C2C9521 /* Pods-RBHUD_Tests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		F9710FADE7C9694E4E6EADE6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				ED49B8135F0B68D90D719386 /* Pods_RBHUD_Example.framework */,
-				6CD7581CD29A410F7F76F891 /* Pods_RBHUD_Tests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,12 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "RBHUD_Example" */;
 			buildPhases = (
-				99341BB8B9A5E11F14EB0A8E /* Check Pods Manifest.lock */,
+				E2E6C21017A3E6A778168FC6 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				201CC29B383EC7A160AA6A68 /* Embed Pods Frameworks */,
-				AD8C730169E1323BF6F4182C /* Copy Pods Resources */,
+				4EBB90F57F7ED5FD42BF8E3D /* [CP] Embed Pods Frameworks */,
+				61BAFC65C5383D6B88EA9602 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,12 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "RBHUD_Tests" */;
 			buildPhases = (
-				B2A55267D97EBB4F5F2528AC /* Check Pods Manifest.lock */,
+				9BE53974379F9534EBD3D7F6 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				0795CE5C0F4814CF7C61A25A /* Embed Pods Frameworks */,
-				58BBEE6E7845C7C2944CC326 /* Copy Pods Resources */,
+				CA645DA03C2C8C5AA766DBE1 /* [CP] Embed Pods Frameworks */,
+				3AF3EEF91D85512547CF046C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,11 +215,11 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -264,44 +264,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0795CE5C0F4814CF7C61A25A /* Embed Pods Frameworks */ = {
+		3AF3EEF91D85512547CF046C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RBHUD_Tests/Pods-RBHUD_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		201CC29B383EC7A160AA6A68 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RBHUD_Example/Pods-RBHUD_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		58BBEE6E7845C7C2944CC326 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,29 +279,32 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RBHUD_Tests/Pods-RBHUD_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		99341BB8B9A5E11F14EB0A8E /* Check Pods Manifest.lock */ = {
+		4EBB90F57F7ED5FD42BF8E3D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RBHUD_Example/Pods-RBHUD_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RBHUD/RBHUD.framework",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RBHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RBHUD_Example/Pods-RBHUD_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD8C730169E1323BF6F4182C /* Copy Pods Resources */ = {
+		61BAFC65C5383D6B88EA9602 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,19 +312,58 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RBHUD_Example/Pods-RBHUD_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B2A55267D97EBB4F5F2528AC /* Check Pods Manifest.lock */ = {
+		9BE53974379F9534EBD3D7F6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RBHUD_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA645DA03C2C8C5AA766DBE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RBHUD_Tests/Pods-RBHUD_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RBHUD/RBHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RBHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RBHUD_Tests/Pods-RBHUD_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2E6C21017A3E6A778168FC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RBHUD_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -493,7 +505,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A78B6D879E9F925FEAD4EC2 /* Pods-RBHUD_Example.debug.xcconfig */;
+			baseConfigurationReference = 7D58A880F7CA5F4D5FC6DD6D /* Pods-RBHUD_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RBHUD/Info.plist;
@@ -502,13 +514,14 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74784B84455E8E9BA22C9768 /* Pods-RBHUD_Example.release.xcconfig */;
+			baseConfigurationReference = 24F682D06CFEA059C2F306EB /* Pods-RBHUD_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RBHUD/Info.plist;
@@ -517,13 +530,14 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39F8265A8A676045CB608495 /* Pods-RBHUD_Tests.debug.xcconfig */;
+			baseConfigurationReference = D7B901782738F36C779FADCB /* Pods-RBHUD_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -538,14 +552,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RBHUD_Example.app/RBHUD_Example";
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB2A9CFB895C793199FE0B92 /* Pods-RBHUD_Tests.release.xcconfig */;
+			baseConfigurationReference = DB07F7B71A558ED96C2C9521 /* Pods-RBHUD_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -556,7 +571,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RBHUD_Example.app/RBHUD_Example";
 			};
 			name = Release;
